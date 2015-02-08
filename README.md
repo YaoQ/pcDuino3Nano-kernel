@@ -44,6 +44,9 @@ cp ../pcDuino3Nano-kernel/boot.scr ../output/boot
 cp ../pcDuino3Nano-kernel/linksprite-pcduino3-nano.bin ../output/boot  
 cp *pcduino3-nano.tar.gz ../output/boot  
 
+\# If you wish to update your kernel continue below. I you are building a  
+\# complete sdcard continue on to digitalhack/pcDuino3Nano-rootfs
+
 \# Update the sdcard with new kernel  
 
 cd ../output  
