@@ -6,7 +6,7 @@ cd ./staging
 mkdir -p ./output/boot  
 
 git clone https://github.com/dan-and/linux-sunxi.git  
-git close https://github.com/digitalhack/pcDuino3Nano-kernel.git
+git close https://github.com/digitalhack/pcDuino3Nano-kernel.git  
 unzip -o ./pcDuino3Nano-kernel/firmware.zip -d ./linux-sunxi/  
 
 cd linux-sunxi
