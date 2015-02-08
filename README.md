@@ -26,7 +26,8 @@ make -j2 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- all zImage modules_prepare
 \# Patch the buildtar script to include zImage as vmlinuz in the tar file  
 patch --batch -N -p1 < ../pcDuino3Nano-kernel/zImage_buildtar.patch  
 
-make -j1 targz-pkg LOCALVERSION="-pcduino3-nano" ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-    
+make -j1 targz-pkg LOCALVERSION="-pcduino3-nano" ARCH=arm \\  
+&nbsp;&nbsp;&nbsp;&nbsp;CROSS_COMPILE=arm-linux-gnueabihf-    
 
 \# Uncomment the lines below if you want to update fex and script files  
 \# fex2bin ../pcDuino3Nano-kernel/Linksprite_pcDuino3_Nano.fex \\  
