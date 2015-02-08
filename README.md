@@ -48,7 +48,8 @@ bootfscard="/dev/sdb1"
 rootfscard="/dev/sdb2"  
 
 mount ${bootfscard} ./bootfs  
-tar zxvf ./boot/linux-3.4.106-pcduino3-nano.tar.gz --wildcards --strip-components=1 -C ./bootfs/ boot/System.map*   boot/config* boot/vmlinuz*  
+tar zxvf ./boot/linux-3.4.106-pcduino3-nano.tar.gz --wildcards --strip-components=1 \\  
+&nbsp;&nbsp;&nbsp;&nbsp;-C ./bootfs/ boot/System.map*   boot/config* boot/vmlinuz*  
 umount ${bootfscard}  
 
 mount ${rootfscard} ./rootfs  
