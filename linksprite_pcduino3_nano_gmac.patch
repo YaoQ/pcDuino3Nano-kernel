@@ -1,0 +1,33 @@
+diff --git a/drivers/net/ethernet/allwinner/gmac/gmac_core.c b/drivers/net/ethernet/allwinner/gmac/gmac_core.c
+index 88de3b0..3c8e301 100644
+--- a/drivers/net/ethernet/allwinner/gmac/gmac_core.c
++++ b/drivers/net/ethernet/allwinner/gmac/gmac_core.c
+@@ -16,6 +16,10 @@
+  * along with this program.
+  ********************************************************************************/
+ 
++/*********************************************************************************
++ * Patched by digitalhack 2/1/2015 for pcDuino3 Nano                             *
++ *********************************************************************************/
++
+ #include <linux/module.h>
+ #include <linux/kernel.h>
+ #include <linux/interrupt.h>
+@@ -217,6 +221,9 @@ static void gmac_clk_ctl(struct gmac_priv *priv, unsigned int flag)
+ 			|| phy_interface == PHY_INTERFACE_MODE_GMII)
+ 		priv_clk_reg |= 0x00000002;
+ 
++                /* Added for pcDuino3 Nano */
++                priv_clk_reg |= (0x00000003<<10);
++
+ 	writel(priv_clk_reg, priv->gmac_clk_reg + GMAC_CLK_REG);
+ }
+ 
+@@ -1753,6 +1760,6 @@ static void __exit gmac_remove(void)
+ module_init(gmac_init);
+ module_exit(gmac_remove);
+ 
+-MODULE_DESCRIPTION("SUN6I 10/100/1000Mbps Ethernet device driver");
++MODULE_DESCRIPTION("SUN6I 10/100/1000Mbps Ethernet device driver (pcDuino3Nano Mods)");
+ MODULE_AUTHOR("Shuge <shugeLinux@gmail.com>");
+ MODULE_LICENSE("GPL v2");
