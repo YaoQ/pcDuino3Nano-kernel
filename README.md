@@ -11,7 +11,7 @@ unzip -o ./pcDuino3Nano-kernel/firmware.zip -d ./linux-sunxi/
 
 cd linux-sunxi
 
-\# Patch allwinner gmac driver for pcDuino3 Nano
+\# Patch allwinner gmac driver for pcDuino3 Nano  
 patch --batch -N -p1 < ../pcDuino3Nano-kernel/linksprite_pcduino3_nano_gmac.patch  
 
 make CROSS_COMPILE=arm-linux-gnueabihf- clean  
@@ -19,7 +19,7 @@ make CROSS_COMPILE=arm-linux-gnueabihf- clean
 cp ../pcDuino3Nano-kernel/pcduino3_nano.config .config  
 
 \# Optional step if you want to change the configuration  
-make -j2 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig # Optional  
+make -j2 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig    
 
 make -j2 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- all zImage modules_prepare  
 
@@ -29,8 +29,10 @@ patch --batch -N -p1 < ../pcDuino3Nano-kernel/zImage_buildtar.patch
 make -j1 targz-pkg LOCALVERSION="-pcduino3-nano" ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-    
 
 \# Uncomment the lines below if you want to update fex and script files  
-\# fex2bin ../pcDuino3Nano-kernel/Linksprite_pcDuino3_Nano.fex ../pcDuino3Nano-kernel/linksprite-pcduino3-nano.bin  
-\# mkimage -C none -A arm -T script -d ../pcDuino3Nano-kernel/boot.cmd ../pcDuino3Nano-kernel/boot.scr >> /dev/null  
+\# fex2bin ../pcDuino3Nano-kernel/Linksprite_pcDuino3_Nano.fex \\  
+\# &nbsp;&nbsp;&nbsp;&nbsp;../pcDuino3Nano-kernel/linksprite-pcduino3-nano.bin  
+\# mkimage -C none -A arm -T script -d ../pcDuino3Nano-kernel/boot.cmd \\  
+\# &nbsp;&nbsp;&nbsp;&nbsp;../pcDuino3Nano-kernel/boot.scr >> /dev/null  
 
 \# Move the boot files to staging  
 
