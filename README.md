@@ -1,6 +1,9 @@
 # pcDuino3Nano-kernel
-Manual Kernel Build
---------------------
+
+pcDuino3 Nano sunnxi kernel build scripts and auxiliary files
+
+Manual Kernel Build Process
+---------------------------
 
 cd ./staging  
 mkdir -p ./output/boot  
