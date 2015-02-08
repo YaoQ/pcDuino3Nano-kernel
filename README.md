@@ -1,6 +1,6 @@
 # pcDuino3Nano-kernel
 
-pcDuino3 Nano sunnxi kernel build scripts and auxiliary files
+pcDuino3 Nano sunnxi kernel build script and auxiliary files
 
 Manual Kernel Build Process
 ---------------------------
