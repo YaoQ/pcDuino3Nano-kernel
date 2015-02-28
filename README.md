@@ -19,7 +19,7 @@ patch --batch -N -p1 < ../pcDuino3Nano-kernel/linksprite_pcduino3_nano_gmac.patc
 
 make CROSS_COMPILE=arm-linux-gnueabihf- clean  
 
-cp ../pcDuino3Nano-kernel/pcduino3_nano.config .config  
+cp ../pcDuino3Nano-kernel/linksprite_pcduino3_nano_defconfig .config  
 
 \# Optional step if you want to change the configuration  
 make -j2 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig    
